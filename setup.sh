@@ -157,3 +157,9 @@ yay ammonite
 ## Install jetbrains toolbox
 pacm -S jetbrains-toolbox
 
+## Install rustup
+pacm -S rustup
+
+## Install rust toolchain
+rustup toolchain install nightly
+rustup default nightly
