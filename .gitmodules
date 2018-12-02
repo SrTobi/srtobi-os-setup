@@ -1,0 +1,3 @@
+[submodule "os-install"]
+	path = os-install
+	url = https://github.com/SrTobi/os-install
