@@ -120,13 +120,10 @@ mkdir ~/store/pictures
 mkdir ~/store/pictures/wallpaper
 cp df.png ~/store/pictures/wallpaper/df.png
 
-## Install acpi for battery i3-block
-pacm -S acpi
-
 ## Setup i3
 pushd ~/.config
 rm -r i3
-git clone https://github.com/SrTobi/i3-config i3 -b laptop
+git clone https://github.com/SrTobi/i3-config i3
 popd
 cp xprofile ~/.xprofile
 cp Xresources ~/.Xresources
