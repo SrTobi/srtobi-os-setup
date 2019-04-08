@@ -81,6 +81,8 @@ popd
 chsh -s $(which zsh)
 EOF
 
+## Setup ssh config
+cp ssh_config ~/.ssh/config
 
 ## Install i3blocks
 pacm -S i3blocks
@@ -93,6 +95,7 @@ yay xcwd-git
 
 ## Install Kitty
 pacm -S kitty
+mkdir -p ~/.config/kitty
 cp kitty.conf ~/.config/kitty/kitty.conf
 
 ## Install xclip
@@ -104,7 +107,10 @@ pacm -S redshift
 ## Setup xdg dirs
 cp user-dirs.dirs ~/.config/user-dirs.dirs
 rm -r ~/Desktop ~/Documents ~/Downloads ~/Music ~/Pictures ~/Public ~/Templates ~/Videos
-mkdir ~/store
+mkdir -p ~/store ~/store/documents ~/store/music ~/store/pictures ~/store/public ~/store/templates ~/store/videos ~/desktop ~/downloads
+
+## Install additional fonts
+pacm -S noto-fonts-cjk noto-fonts-emoji
 
 ## Setup feh
 pacm -S feh
@@ -113,6 +119,9 @@ pacm -S feh
 mkdir ~/store/pictures
 mkdir ~/store/pictures/wallpaper
 cp df.png ~/store/pictures/wallpaper/df.png
+
+## Install acpi for battery i3-block
+pacm -S acpi
 
 ## Setup i3
 pushd ~/.config
