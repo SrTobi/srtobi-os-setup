@@ -1,6 +1,7 @@
 #!./os-install/os-install.py
 
 ## Prolog
+set -e
 shopt -s expand_aliases
 alias pacm='sudo pacman --noconfirm'
 alias yay='yay --noconfirm -S'
@@ -86,6 +87,7 @@ cp ssh_config ~/.ssh/config
 
 ## Install i3blocks
 pacm -S i3blocks
+yay i3blocks-contrib-git
 
 ## Install rofi
 pacm -S rofi
@@ -127,6 +129,11 @@ git clone https://github.com/SrTobi/i3-config i3
 popd
 cp xprofile ~/.xprofile
 cp Xresources ~/.Xresources
+
+## Generate i3 config files
+pushd ~/.config/i3
+./generate.py
+popd
 
 ## Install i3lock
 sudo pacman -R i3lock

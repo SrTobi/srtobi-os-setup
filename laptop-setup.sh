@@ -1,6 +1,7 @@
 #!./os-install/os-install.py
 
 ## Prolog
+set -e
 shopt -s expand_aliases
 alias pacm='sudo pacman --noconfirm'
 alias yay='yay --noconfirm -S'
@@ -10,9 +11,4 @@ alias yay='yay --noconfirm -S'
 
 ## Install acpi for battery i3-block
 pacm -S acpi
-
-## Checkout laptop branch for i3
-pushd ~/.config/i3
-git checkout laptop
-popd
 
